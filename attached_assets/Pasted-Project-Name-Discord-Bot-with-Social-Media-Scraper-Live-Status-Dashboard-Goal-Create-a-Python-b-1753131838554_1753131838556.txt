@@ -1,0 +1,85 @@
+Project Name:
+Discord Bot with Social Media Scraper + Live Status Dashboard
+
+Goal:
+Create a Python-based Discord bot that automatically scrapes specific social media links every 5 minutes to check for new posts and sends alerts to a Discord channel automatically when new content is detected.
+
+Also, create a simple live status dashboard (web-based or terminal-based) to monitor:
+
+Whether the bot successfully fetched the latest post for each URL.
+
+The timestamp of the last check per URL.
+
+Whether there is a new post since the last scan (True/False).
+
+If there's an error (e.g., scraping failed), show the error in the dashboard.
+
+Provided Links to Monitor:
+LinkedIn: https://www.linkedin.com/company/solidpointai/
+
+TikTok: https://www.tiktok.com/@solidpointai
+
+Facebook: https://www.facebook.com/profile.php?id=61575875666188
+
+X (Twitter): https://x.com/SolidPoint11
+
+Core Requirements:
+Bot Behavior:
+Starts automatically on launch. No commands are required to start/stop.
+
+Scrapes the given URLs every 5 minutes.
+
+Sends a message automatically in a specific Discord channel if a new post is found.
+
+Uses either Playwright/Selenium for dynamic content, or official APIs if available.
+
+Stores the last fetched post info locally (JSON/SQLite).
+
+Dashboard (Live Status Panel):
+Simple web UI (Flask, FastAPI, or Streamlit) OR terminal dashboard if web is not preferred.
+
+For each link display:
+
+Platform	Last Post Found (summary)	Last Checked	New Post?	Error
+LinkedIn	"Post title or link"	HH:MM:SS	✅ / ❌	Error message if any
+TikTok	"Video link or caption"	HH:MM:SS	✅ / ❌	Error message if any
+Facebook	"Post preview"	HH:MM:SS	✅ / ❌	Error message if any
+X (Twitter)	"Tweet preview"	HH:MM:SS	✅ / ❌	Error message if any
+
+Extra Requirements:
+Headless mode scraping for TikTok, Facebook, and LinkedIn if needed.
+
+Retry & error handling: If scraping fails, show the error clearly in the dashboard and log to Discord if possible.
+
+Support for custom user-agents / proxy (optional) to avoid bot detection.
+
+Dockerize the project if possible for easy deployment.
+
+Tech Stack Suggestions:
+Python
+
+Discord.py (for bot)
+
+Playwright / Selenium (for scraping)
+
+Flask / FastAPI / Streamlit (for dashboard)
+
+SQLite / JSON (for local storage)
+
+APSheduler / asyncio Tasks (for timing)
+
+Deliverables:
+Working Discord Bot (auto-run, no commands required).
+
+Live Status Dashboard accessible locally or on server.
+
+README.md with:
+
+Setup instructions
+
+Environment variables / config
+
+How to add/remove links
+
+Deployment steps
+
